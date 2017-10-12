@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">感知城市</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="warn">预警</string>
+    <string name="work">工作</string>
+    <string name="discover">发现</string>
+    <string name="resource">资源</string>
+    <string name="mine">我的</string>
+    <string name="username_default">biloba</string>
+    <string name="my_work">我的工作</string>
+    <string name="my_report">我的报告</string>
+    <string name="my_award">我的奖励</string>
+    <string name="message">消息通知</string>
+    <string name="service">服务中心</string>
+    <string name="feedback">意见反馈</string>
+    <string name="score">给我们好评</string>
+    <string name="check_update">检查更新</string>
+    <string name="share_firend">推荐给朋友</string>
+    <string name="birthday">生日</string>
+    <string name="tel">手机号</string>
+    <string name="password">密码</string>
+    <string name="sex">性别</string>
+    <string name="nick">昵称</string>
+    <string name="head">头像</string>
+    <string name="edit_personal_info">编辑个人信息</string>
+    <string name="error">出错</string>
+    <string name="avater_path">avater_path</string>
+</resources>

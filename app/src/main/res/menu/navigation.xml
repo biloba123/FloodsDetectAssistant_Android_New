@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_warn"
+        android:icon="@drawable/ic_warn"
+        android:title="@string/warn"/>
+
+    <item
+        android:id="@+id/navigation_work"
+        android:icon="@drawable/ic_work"
+        android:title="@string/work"/>
+
+    <item
+        android:id="@+id/navigation_discover"
+        android:icon="@drawable/ic_discover"
+        android:title="@string/discover"/>
+
+    <item
+        android:id="@+id/navigation_resource"
+        android:icon="@drawable/ic_resource"
+        android:title="@string/resource"/>
+
+    <item
+        android:id="@+id/navigation_mine"
+        android:icon="@drawable/ic_mine"
+        android:title="@string/mine"/>
+
+</menu>
