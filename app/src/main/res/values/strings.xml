@@ -27,4 +27,10 @@
     <string name="edit_personal_info">编辑个人信息</string>
     <string name="error">出错</string>
     <string name="avater_path">avater_path</string>
+    <string name="load_error">加载数据出错</string>
+    <string name="show_in_map">在地图中显示</string>
+    <string name="monitoring_data">监测数据</string>
+    <string name="device_map">监测点</string>
+    <string name="about_app">关于应用</string>
+    <string name="no_message">无消息</string>
 </resources>

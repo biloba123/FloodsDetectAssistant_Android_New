@@ -10,4 +10,5 @@
     <dimen name="bottom_nav_size">56dp</dimen>
     <dimen name="tag_size">24dp</dimen>
     <dimen name="item_icon_size">26dp</dimen>
+    <dimen name="icon_text">16dp</dimen>
 </resources>
