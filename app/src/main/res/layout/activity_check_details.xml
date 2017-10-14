@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_check_details_show"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/big_image_height"
+                    android:scaleType="centerCrop"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:padding="@dimen/card_spacing">
+
+
+                    <TextView
+                        android:id="@+id/tv_check_details_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_toLeftOf="@+id/btn_check_details_go"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/sub_big_text"
+                        tools:text="武汉科技大学"/>
+
+                    <TextView
+                        android:id="@+id/tv_check_details_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/tv_check_details_name"
+                        android:layout_marginTop="@dimen/sub_small_spacing"
+                        android:layout_toLeftOf="@+id/btn_check_details_go"
+                        android:textSize="@dimen/medium_text"
+                        android:textColor="@color/sub_text_color"
+                        tools:text="湖北武汉武昌区1684号"/>
+
+
+                    <Button
+                        android:id="@+id/btn_check_details_go"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:drawableLeft="@drawable/ic_navigation"
+                        android:background="@android:color/transparent"
+                        android:text="@string/go"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/medium_text"/>
+                </RelativeLayout>
+
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small_spacing"
+                    android:background="@android:color/white"
+                    android:padding="@dimen/card_spacing"
+                    android:stretchColumns="1">
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="审核状态"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/medium_text"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/tv_check_details_status"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:layout_marginLeft="@dimen/medium_spacing"
+                            android:textColor="@color/sub_text_color"
+                            android:textSize="@dimen/medium_text"
+                            tools:text="未审核"
+                            />
+
+                    </TableRow>
+
+                    <TableRow android:layout_marginTop="@dimen/small_spacing">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="上报时间"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/medium_text"
+                            android:textStyle="bold"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_check_details_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/medium_spacing"
+                            android:textColor="@color/sub_text_color"
+                            android:textSize="@dimen/medium_text"
+                            tools:text="2016.7.24"
+                            />
+                    </TableRow>
+
+                    <TableRow android:layout_marginTop="@dimen/small_spacing">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/medium_text"
+                            android:text="上报类型"
+                            android:textStyle="bold"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_check_details_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/medium_spacing"
+                            android:textColor="@color/sub_text_color"
+                            android:textSize="@dimen/medium_text"
+                            tools:text="公众"
+                            />
+                    </TableRow>
+
+
+                </TableLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small_spacing"
+                    android:background="@android:color/white"
+                    android:paddingLeft="@dimen/card_spacing"
+                    android:paddingTop="@dimen/card_spacing"
+                    android:text="描述信息"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/medium_text"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tv_check_details_describe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:paddingTop="@dimen/sub_small_spacing"
+                    android:paddingStart="@dimen/card_spacing"
+                    android:paddingEnd="@dimen/card_spacing"
+                    android:paddingBottom="@dimen/card_spacing"
+                    android:textSize="@dimen/sub_medium_text"
+                    android:lineSpacingMultiplier="1.1"
+                    android:letterSpacing="0.05"
+                    android:textColor="@color/sub_text_color"
+                    tools:text="WUHAN, July 9 (Xinhua) -- Dike patrolman Shao Wentao, 34, has been bowed down with anxiety in recent days.\nLooking across the Yangtze River at Wuhan, the mudflats he had inspected dozens of times were completely submerged by turbid water.\n The river is going up and our 'territory' is getting smaller and smaller, he said.\nShao is working in a 40-strong team responsible for patrolling a 2-km-long segment around the clock of any signs of troubles, including seepage and bubbles, that could lead to a breach of the embankment.\nAs the rain continues to fall, water is above the alert level in provinces of Anhui, Hubei, Hunan, Jiangsu and Jiangxi, reaching 28.37 meters in rivers in Wuhan this week, the fifth highest in the city's history, and the highest level in 17 years."/>
+
+
+            </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll_check_details_operate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_check_details_accept"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/holo_blue_light"
+            android:text="通过"
+            android:textColor="@color/accent_white"
+            android:textSize="@dimen/medium_text"/>
+
+        <Button
+            android:id="@+id/btn_check_details_reject"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/accent_white"
+            android:text="拒绝"
+            android:textSize="@dimen/medium_text"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/card_corner_radius">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:paddingStart="@dimen/card_spacing"
+        android:paddingEnd="@dimen/card_spacing"
+        android:paddingTop="35dp"
+        android:paddingBottom="@dimen/card_spacing">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                android:id="@+id/tv_route_from_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/sub_text_color"
+                android:text="@string/from_here_to"
+                android:textSize="@dimen/medium_text" />
+
+            <Spinner
+                android:id="@+id/sp_route_point"
+                android:layout_marginLeft="@dimen/small_spacing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </Spinner>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sub_small_spacing"
+            android:gravity="center_vertical">
+            <RadioGroup
+                android:id="@+id/rg_route_model"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/sub_small_spacing">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/type"
+                    android:paddingRight="@dimen/small_spacing"
+                    android:textColor="@color/sub_text_color"
+                    android:textSize="@dimen/medium_text"/>
+
+                <RadioButton
+                    android:id="@+id/rbtn_route_foot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/walk"
+                    android:textColor="@android:color/black" />
+
+                <RadioButton
+                    android:id="@+id/rbtn_route_bus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bus"
+                    android:textColor="@android:color/black" />
+
+                <RadioButton
+                    android:id="@+id/rbtn_route_car"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/car"
+                    android:textColor="@android:color/black" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btn_route_search"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:gravity="center"
+                android:drawableLeft="@drawable/ic_search"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:textColor="@color/text_color"
+                android:layout_alignParentRight="true"
+                android:text="@string/search" />
+        </RelativeLayout>
+    </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <com.amap.api.maps.MapView
+        android:id="@+id/map_route"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

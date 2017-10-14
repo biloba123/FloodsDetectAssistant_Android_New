@@ -3,19 +3,16 @@ package com.lvqingyang.floodsdetectassistant_android_new.Warn;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.lvqingyang.floodsdetectassistant_android_new.BuildConfig;
 import com.lvqingyang.floodsdetectassistant_android_new.R;
 import com.lvqingyang.floodsdetectassistant_android_new.Warn.Chart.ChartActivity;
 import com.lvqingyang.floodsdetectassistant_android_new.bean.DeviceInfo;
@@ -48,6 +45,7 @@ public class WarnFragment extends BaseFragment {
     private List<DeviceInfo> mDeviceInfoList=new ArrayList<>();
     private SolidRVBaseAdapter mAdapter;
     private static final String TAG = "WarnFragment";
+    private FloatingActionButton mFloatingActionButton;
 
     public static WarnFragment newInstance() {
         
@@ -69,6 +67,7 @@ public class WarnFragment extends BaseFragment {
         mToolbar = (Toolbar) view.findViewById(R.id.toolbar);
         initToolbar(mToolbar, getString(R.string.warn), false);
         mRvDevice = (RecyclerView) view.findViewById(R.id.rv_device);
+        mFloatingActionButton = (FloatingActionButton) view.findViewById(R.id.fab_map);
     }
 
     @Override
@@ -98,7 +97,6 @@ public class WarnFragment extends BaseFragment {
                 holder.setText(R.id.tv_location, bean.getPosition());
                 holder.setText(R.id.tv_description, bean.getDescription());
                 ImageView ivWarn= (ImageView) holder.getView(R.id.iv_warn);
-                if (BuildConfig.DEBUG) Log.d(TAG, "onBindDataToView: "+bean.getName()+" "+bean.getDangerLevel());
                 ivWarn.getDrawable().setLevel(bean.getDangerLevel()*10);
             }
 
@@ -115,6 +113,13 @@ public class WarnFragment extends BaseFragment {
                 startActivity(intent);
             }
         };
+
+        mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DeviceMapActivity.start(getActivity());
+            }
+        });
     }
 
     @Override
@@ -128,11 +133,11 @@ public class WarnFragment extends BaseFragment {
 
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_warn, menu);
-        super.onCreateOptionsMenu(menu, inflater);
-    }
+//    @Override
+//    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+//        inflater.inflate(R.menu.menu_warn, menu);
+//        super.onCreateOptionsMenu(menu, inflater);
+//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

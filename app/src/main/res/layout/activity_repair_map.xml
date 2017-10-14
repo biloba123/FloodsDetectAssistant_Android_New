@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:tools="http://schemas.android.com/tools"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical">
+
+    <com.amap.api.maps.MapView
+        android:id="@+id/map_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/card_spacing"
+        android:layout_marginRight="@dimen/card_spacing"
+        android:layout_marginTop="35dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/accent_white"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btn_repair_map_flooded_places"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_item"
+            android:text="@string/wet_point" />
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/div"/>
+        <Spinner
+            android:id="@+id/sp_repair_map_point_choose"
+            android:layout_width="0dp"
+            android:paddingStart="@dimen/small_spacing"
+            android:paddingEnd="@dimen/small_spacing"
+            android:layout_height="match_parent"
+            android:layout_weight="2"/>
+
+    </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_accuracy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/cv_info_tips"
+        android:layout_marginBottom="@dimen/setting_spacing"
+        android:layout_marginLeft="@dimen/card_spacing">
+
+    <RadioGroup
+        android:id="@+id/rg_repair_map_model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/sub_small_spacing"
+        android:paddingBottom="@dimen/sub_small_spacing"
+        android:paddingEnd="@dimen/small_spacing"
+        android:paddingStart="@dimen/small_spacing">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/accuracy"
+            android:textColor="@color/text_color"/>
+
+        <RadioButton
+            android:id="@+id/rbtn_repair_map_locate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/normal"
+            android:textColor="@android:color/black" />
+
+        <RadioButton
+            android:id="@+id/rbtn_repair_map_rotate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/accurate"
+            android:textColor="@android:color/black" />
+    </RadioGroup>
+    </android.support.v7.widget.CardView>
+
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_info_tips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:cardCornerRadius="@dimen/card_corner_radius">
+
+    <RelativeLayout
+        android:id="@+id/rl_repair_map_info_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="@dimen/card_spacing"
+        android:paddingStart="@dimen/card_spacing"
+        android:paddingTop="@dimen/card_spacing">
+
+        <TextView
+            android:id="@+id/tv_repair_map_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="受灾地点"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/sub_big_text" />
+
+
+        <TextView
+            android:id="@+id/tv_repair_map_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_repair_map_name"
+            android:layout_toLeftOf="@+id/btn_repair_map_details"
+            android:layout_alignParentLeft="true"
+            android:textColor="@color/sub_text_color"
+            android:textSize="@dimen/medium_text"
+            android:layout_marginTop="@dimen/sub_small_spacing"
+            tools:text="受灾地址" />
+
+        <Button
+            android:id="@+id/btn_repair_map_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:drawableLeft="@drawable/ic_details"
+            android:background="@android:color/transparent"
+            android:layout_alignParentRight="true"
+            android:text="@string/detail" />
+
+        <View
+            android:layout_below="@+id/tv_repair_map_address"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/div"
+            android:layout_marginTop="@dimen/sub_small_spacing"
+             />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_repair_map_address"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_repair_map_drive"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:text="@string/car" />
+
+            <Button
+                android:id="@+id/btn_repair_map_bus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:text="@string/bus" />
+
+            <Button
+                android:id="@+id/btn_repair_map_foot"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:text="@string/walk" />
+        </LinearLayout>
+
+    </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

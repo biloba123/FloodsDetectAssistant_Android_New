@@ -5,19 +5,31 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.MenuItem;
 
+import com.lvqingyang.floodsdetectassistant_android_new.Discover.DiscoverFragment;
 import com.lvqingyang.floodsdetectassistant_android_new.Mine.MineFragment;
+import com.lvqingyang.floodsdetectassistant_android_new.Resource.ResourceFragment;
 import com.lvqingyang.floodsdetectassistant_android_new.Warn.WarnFragment;
+import com.lvqingyang.floodsdetectassistant_android_new.Work.WorkFragment;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import frame.base.BaseActivity;
 
 public class MainActivity extends BaseActivity {
 
     private FragmentManager mFragmentManager;
-    private MineFragment mMineFragment;
     private WarnFragment mWarnFragment;
+    private WorkFragment mWorkFragment;
+    private DiscoverFragment mDiscoverFragment;
+    private ResourceFragment mResourceFragment;
+    private MineFragment mMineFragment;
+    private List<Fragment> mFragmentList=new ArrayList<>();
     private BottomNavigationView mBottomNavigationView;
 
     @Override
@@ -26,23 +38,39 @@ public class MainActivity extends BaseActivity {
 
         mFragmentManager=getSupportFragmentManager();
         if (paramBundle != null) {
-            mMineFragment= (MineFragment) mFragmentManager
-                    .findFragmentByTag(MineFragment.class.getName());
             mWarnFragment= (WarnFragment) mFragmentManager
                     .findFragmentByTag(WarnFragment.class.getName());
-            mFragmentManager.beginTransaction()
-                    .hide(mWarnFragment)
-                    .hide(mMineFragment)
-                    .commit();
+            mWorkFragment= (WorkFragment) mFragmentManager
+                    .findFragmentByTag(WorkFragment.class.getName());
+            mDiscoverFragment= (DiscoverFragment) mFragmentManager
+                    .findFragmentByTag(DiscoverFragment.class.getName());
+            mResourceFragment= (ResourceFragment) mFragmentManager
+                    .findFragmentByTag(ResourceFragment.class.getName());
+            mMineFragment= (MineFragment) mFragmentManager
+                    .findFragmentByTag(MineFragment.class.getName());
         }else {
             mWarnFragment=WarnFragment.newInstance();
+            mWorkFragment=WorkFragment.newInstance();
+            mDiscoverFragment=DiscoverFragment.newInstance();
+            mResourceFragment=ResourceFragment.newInstance();
             mMineFragment=MineFragment.newInstance();
             mFragmentManager.beginTransaction()
                     .add(R.id.content, mWarnFragment, WarnFragment.class.getName())
+                    .add(R.id.content, mWorkFragment, WorkFragment.class.getName())
+                    .add(R.id.content, mDiscoverFragment, DiscoverFragment.class.getName())
+                    .add(R.id.content, mResourceFragment, ResourceFragment.class.getName())
                     .add(R.id.content, mMineFragment, MineFragment.class.getName())
-                    .hide(mMineFragment)
                     .commit();
         }
+
+        mFragmentList.add(mWarnFragment);
+        mFragmentList.add(mWorkFragment);
+        mFragmentList.add(mDiscoverFragment);
+        mFragmentList.add(mResourceFragment);
+        mFragmentList.add(mMineFragment);
+
+        mBottomNavigationView.setSelectedItemId(R.id.navigation_discover);
+        showFragment(mDiscoverFragment);
     }
 
     @Override
@@ -62,26 +90,23 @@ public class MainActivity extends BaseActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.navigation_warn:{
-                        mFragmentManager.beginTransaction()
-                                .hide(mMineFragment)
-                                .show(mWarnFragment)
-                                .commit();
+                        showFragment(mWarnFragment);
                         return true;
                     }
                     case R.id.navigation_work:{
+                        showFragment(mWorkFragment);
                         return true;
                     }
                     case R.id.navigation_discover:{
+                        showFragment(mDiscoverFragment);
                         return true;
                     }
                     case R.id.navigation_resource:{
+                        showFragment(mResourceFragment);
                         return true;
                     }
                     case R.id.navigation_mine:{
-                        mFragmentManager.beginTransaction()
-                                .hide(mWarnFragment)
-                                .show(mMineFragment)
-                                .commit();
+                        showFragment(mMineFragment);
                         return true;
                     }
                 }
@@ -128,5 +153,17 @@ public class MainActivity extends BaseActivity {
                 return false;
         }
         return super.onOptionsItemSelected(paramMenuItem);
+    }
+
+    private void showFragment(Fragment fragment){
+        FragmentTransaction transaction=mFragmentManager.beginTransaction();
+        for (Fragment fragment1 : mFragmentList) {
+            if (fragment1.equals(fragment)) {
+                transaction.show(fragment1);
+            }else {
+                transaction.hide(fragment1);
+            }
+        }
+        transaction.commit();
     }
 }

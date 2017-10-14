@@ -32,6 +32,7 @@ public class RequestHelper {
     private static Gson mGson=new Gson();
     private static final String TAG = "RequestHelper";
     private static final String GET_DEVICE = "http://47.92.48.100:8080/GetMachineInfo";
+    private static final String GET_UPLOAD_INFO = "http://47.92.48.100:8099/urban/getAll";
 
     public static <T> void getResult(final String url, final RequestListener listener){
         Subscription subscribe = Observable.create(new Observable.OnSubscribe<String>() {
@@ -76,5 +77,9 @@ public class RequestHelper {
 
     public static void getDevices(RequestListener lis){
         getResult(GET_DEVICE, lis);
+    }
+
+    public static void getUploadInfos(RequestListener lis){
+        getResult(GET_UPLOAD_INFO, lis);
     }
 }

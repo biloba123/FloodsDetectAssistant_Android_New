@@ -11,4 +11,5 @@
     <dimen name="tag_size">24dp</dimen>
     <dimen name="item_icon_size">26dp</dimen>
     <dimen name="icon_text">16dp</dimen>
+    <dimen name="big_image_height">240dp</dimen>
 </resources>
