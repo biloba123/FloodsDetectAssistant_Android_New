@@ -4,4 +4,15 @@
         <attr name="name" format="string"/>
         <attr name="icon" format="reference"/>
     </declare-styleable>
+
+    <declare-styleable name="ResourceItem">
+        <attr name="ri_name" format="string"/>
+        <attr name="ri_info" format="string"/>
+        <attr name="ri_icon" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="ResourceView">
+        <attr name="rv_name" format="string"/>
+        <attr name="rv_icon" format="reference"/>
+    </declare-styleable>
 </resources>

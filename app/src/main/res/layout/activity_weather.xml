@@ -110,7 +110,7 @@
 
             </TableRow>
 
-            <TableRow android:layout_marginTop="@dimen/small_spacing">
+            <TableRow android:layout_marginTop="@dimen/sub_medium_spacing">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -132,7 +132,7 @@
                     />
             </TableRow>
 
-            <TableRow android:layout_marginTop="@dimen/small_spacing">
+            <TableRow android:layout_marginTop="@dimen/sub_medium_spacing">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -154,7 +154,7 @@
                     />
             </TableRow>
 
-            <TableRow android:layout_marginTop="@dimen/small_spacing">
+            <TableRow android:layout_marginTop="@dimen/sub_medium_spacing">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -176,7 +176,7 @@
                     />
             </TableRow>
 
-            <TableRow android:layout_marginTop="@dimen/small_spacing">
+            <TableRow android:layout_marginTop="@dimen/sub_medium_spacing">
                 <TextView
                     android:id="@+id/tv_weather_wind_power"
                     android:layout_width="wrap_content"

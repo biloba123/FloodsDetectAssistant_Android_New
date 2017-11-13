@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">感知城市</string>
+    <string name="app_name">微流</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -57,4 +57,17 @@
     <string name="accurate">精确</string>
     <string name="detail">详情</string>
     <string name="location_wrong">定位失败</string>
+    <string name="post_img">上传图片</string>
+    <string name="post">上传</string>
+    <string name="dot_detail">渍水详情</string>
+    <string name="dot_detail_info">你能更准确的了解到你的城市的渍水详情</string>
+    <string name="public_warn">公众预警</string>
+    <string name="public_warn_info">会告诉你我们知晓的一切关于渍水的信息</string>
+    <string name="contact">黄页</string>
+    <string name="emergency">应急队伍</string>
+    <string name="public_report">公众上报</string>
+    <string name="travel">旅游指导</string>
+    <string name="note">出行小计</string>
+    <string name="gift">积分兑换</string>
+    <string name="test_notification">预警系数： 8</string>
 </resources>

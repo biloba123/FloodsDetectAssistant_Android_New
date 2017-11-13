@@ -108,6 +108,13 @@ public class DiscoverFragment extends BaseFragment {
 
     @Override
     protected void setListener() {
+        dvupload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ReportSituationActivity.start(getActivity());
+            }
+        });
+
         dvmap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -138,9 +145,9 @@ public class DiscoverFragment extends BaseFragment {
         mAdapter=new SolidRVBaseAdapter<UploadInfo>(getActivity(), mUploadInfoList) {
             @Override
             protected void onBindDataToView(SolidCommonViewHolder holder, UploadInfo bean) {
-                holder.setImageFromInternet(R.id.iv_img, bean.getUpload_resource());
-                holder.setText(R.id.tv_name, bean.getUpload_name());
-                holder.setText(R.id.tv_other, bean.getUpload_description());
+                holder.setImageFromInternet(R.id.iv_img, bean.getUploadResource());
+                holder.setText(R.id.tv_name, bean.getUploadName());
+                holder.setText(R.id.tv_other, bean.getUploadDescription());
             }
 
             @Override
@@ -180,7 +187,7 @@ public class DiscoverFragment extends BaseFragment {
                 mUploadInfoList.clear();
                 List<UploadInfo> uploadInfoList=RequestHelper.stringToArray(responce, UploadInfo[].class);
                 for (UploadInfo uploadInfo : uploadInfoList) {
-                    if (uploadInfo.getApproval_status()==1) {
+                    if (uploadInfo.getApprovalStatus()==1) {
                         mUploadInfoList.add(uploadInfo);
                     }
                 }

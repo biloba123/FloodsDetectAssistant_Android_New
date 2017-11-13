@@ -140,7 +140,7 @@ public class MapRepairActivity extends AppCompatActivity implements LocationSour
     private void setMySpinner() {
         ArrayList<String> nameList = new ArrayList<>();
         for (UploadInfo i : mUploadInfoList) {
-            nameList.add(i.getUpload_name());
+            nameList.add(i.getUploadName());
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, nameList);
@@ -159,7 +159,7 @@ public class MapRepairActivity extends AppCompatActivity implements LocationSour
                         mUploadInfoList.get(position).getLatitude(),
                         mUploadInfoList.get(position).getLongitude());
                 arrayMarkers.add(new MarkerOptions()
-                        .title(mUploadInfoList.get(position).getUpload_name())
+                        .title(mUploadInfoList.get(position).getUploadName())
                         .icon(BitmapDescriptorFactory
                                 .defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
                         .position(mLatLng));
@@ -190,7 +190,7 @@ public class MapRepairActivity extends AppCompatActivity implements LocationSour
                     mUploadInfoList.get(i).getLongitude());
 
             aMap.addMarker(new MarkerOptions()
-                    .title(mUploadInfoList.get(i).getUpload_name())
+                    .title(mUploadInfoList.get(i).getUploadName())
                     .icon(BitmapDescriptorFactory
                             .defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
                     .position(mLatLng)
@@ -341,7 +341,7 @@ public class MapRepairActivity extends AppCompatActivity implements LocationSour
 
         //在mPointInfo查找选中的受灾点的信息，并显示在textview中
         for (int i = 0; i < mUploadInfoList.size(); i++) {
-            if (marker.getTitle().equals(mUploadInfoList.get(i).getUpload_name())) {
+            if (marker.getTitle().equals(mUploadInfoList.get(i).getUploadName())) {
                 nowPoint = i;
                 mSpinner.setSelection(i);
                 refreshTipInfo(i);
@@ -352,8 +352,8 @@ public class MapRepairActivity extends AppCompatActivity implements LocationSour
     }
 
     private void refreshTipInfo(int i) {
-        tvName.setText(mUploadInfoList.get(i).getUpload_name());
-        tvAddress.setText(mUploadInfoList.get(i).getUpload_address());
+        tvName.setText(mUploadInfoList.get(i).getUploadName());
+        tvAddress.setText(mUploadInfoList.get(i).getUploadAddress());
     }
 
 //    private void setInfoTipVisibile() {
@@ -375,7 +375,7 @@ public class MapRepairActivity extends AppCompatActivity implements LocationSour
             public void onResponce(String responce) {
                 List<UploadInfo> uploadInfoList=RequestHelper.stringToArray(responce, UploadInfo[].class);
                 for (UploadInfo uploadInfo : uploadInfoList) {
-                    if (uploadInfo.getApproval_status()==1) {
+                    if (uploadInfo.getApprovalStatus()==1) {
                         mUploadInfoList.add(uploadInfo);
                     }
                 }

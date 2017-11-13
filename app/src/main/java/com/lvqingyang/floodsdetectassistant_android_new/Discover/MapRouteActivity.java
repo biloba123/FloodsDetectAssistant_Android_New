@@ -189,7 +189,7 @@ public class MapRouteActivity extends AppCompatActivity implements RadioGroup.On
         ArrayList<String> nameList = new ArrayList<>();
         int index = 0;
         for (int i=0; i < mUploadInfoList.size(); i++) {
-            nameList.add(mUploadInfoList.get(i).getUpload_name());
+            nameList.add(mUploadInfoList.get(i).getUploadName());
             if (nowUploadInfo.getId() == mUploadInfoList.get(i).getId())
                 index = i;
         }
@@ -448,7 +448,7 @@ public class MapRouteActivity extends AppCompatActivity implements RadioGroup.On
                     mUploadInfoList.get(i).getLongitude());
 
             aMap.addMarker(new MarkerOptions()
-                    .title(mUploadInfoList.get(i).getUpload_name())
+                    .title(mUploadInfoList.get(i).getUploadName())
                     .icon(BitmapDescriptorFactory
                             .defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
                     .position(mLatLng)

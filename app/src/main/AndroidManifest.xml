@@ -75,6 +75,9 @@
         </activity>
         <!-- 定位需要的服务 使用2.0的定位需要加上这个 -->
         <service android:name="com.amap.api.location.APSService"/>
+        <activity android:name=".Discover.ReportSituationActivity"/>
+        <activity android:name=".Discover.ReportAddressActivity"
+                  android:theme="@style/AppTheme.NoActionbar.TranStatus"/>
     </application>
 
 </manifest>

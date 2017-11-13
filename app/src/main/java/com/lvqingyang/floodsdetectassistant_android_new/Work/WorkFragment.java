@@ -82,10 +82,10 @@ public class WorkFragment extends BaseFragment {
         mAdapter=new SolidRVBaseAdapter<UploadInfo>(getActivity(), mUploadInfoList) {
             @Override
             protected void onBindDataToView(SolidCommonViewHolder holder, UploadInfo bean) {
-                holder.setImageFromInternet(R.id.iv_img, bean.getUpload_resource());
-                holder.setText(R.id.tv_name, bean.getUpload_name());
-                holder.setText(R.id.tv_location, bean.getUpload_address());
-                holder.setText(R.id.tv_time, new SimpleDateFormat("MM-dd HH:mm").format(new Date(bean.getUpload_time())));
+                holder.setImageFromInternet(R.id.iv_img, bean.getUploadResource());
+                holder.setText(R.id.tv_name, bean.getUploadName());
+                holder.setText(R.id.tv_location, bean.getUploadAddress());
+                holder.setText(R.id.tv_time, new SimpleDateFormat("MM-dd HH:mm").format(new Date(bean.getUploadTime())));
                 holder.setText(R.id.tv_state, getString(R.string.uncheck));
                 holder.getView(R.id.tv_state).setBackgroundResource(R.drawable.bg_state_blue);
             }
@@ -127,7 +127,7 @@ public class WorkFragment extends BaseFragment {
                 mUploadInfoList.clear();
                 List<UploadInfo> uploadInfoList=RequestHelper.stringToArray(responce, UploadInfo[].class);
                 for (UploadInfo uploadInfo : uploadInfoList) {
-                    if (uploadInfo.getApproval_status()==0) {
+                    if (uploadInfo.getApprovalStatus()==0) {
                         mUploadInfoList.add(uploadInfo);
                     }
                 }

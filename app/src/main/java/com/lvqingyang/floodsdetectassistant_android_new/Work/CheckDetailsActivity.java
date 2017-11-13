@@ -86,12 +86,12 @@ public class CheckDetailsActivity extends AppCompatActivity {
 
 
         Glide.with(this)
-                .load(mUploadInfo.getUpload_resource())
+                .load(mUploadInfo.getUploadResource())
                 .into(ivShow);
-        tvName.setText(mUploadInfo.getUpload_name());
-        tvAddress.setText(mUploadInfo.getUpload_address());
-        tvStatus.setText(status[mUploadInfo.getApproval_status()]);
-        switch (mUploadInfo.getApproval_status()) {
+        tvName.setText(mUploadInfo.getUploadName());
+        tvAddress.setText(mUploadInfo.getUploadAddress());
+        tvStatus.setText(status[mUploadInfo.getApprovalStatus()]);
+        switch (mUploadInfo.getApprovalStatus()) {
             case 0:
                 tvStatus.setTextColor(getResources().getColor(android.R.color.holo_blue_light));
                 break;
@@ -102,10 +102,10 @@ public class CheckDetailsActivity extends AppCompatActivity {
                 tvStatus.setTextColor(getResources().getColor(android.R.color.holo_red_light));
                 break;
         }
-        tvTime.setText(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(mUploadInfo.getUpload_time())));
-        tvType.setText(mUploadInfo.getUpload_type());
-        tvDescribe.setText(mUploadInfo.getUpload_description());
-        if (mUploadInfo.getApproval_status() == 0)
+        tvTime.setText(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(mUploadInfo.getUploadTime())));
+        tvType.setText(mUploadInfo.getUploadType());
+        tvDescribe.setText(mUploadInfo.getUploadDescription());
+        if (mUploadInfo.getApprovalStatus() == 0)
             llOperate.setVisibility(View.VISIBLE);
         else {
             llOperate.setVisibility(View.GONE);

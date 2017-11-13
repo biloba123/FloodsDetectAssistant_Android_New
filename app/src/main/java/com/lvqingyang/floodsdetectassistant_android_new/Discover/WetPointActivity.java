@@ -55,9 +55,9 @@ public class WetPointActivity extends BaseActivity {
         mAdapter=new SolidRVBaseAdapter<UploadInfo>(this, mUploadInfoList) {
             @Override
             protected void onBindDataToView(SolidCommonViewHolder holder, final UploadInfo bean) {
-                holder.setImageFromInternet(R.id.iv_img, bean.getUpload_resource());
-                holder.setText(R.id.tv_name, bean.getUpload_name());
-                holder.setText(R.id.tv_other, bean.getUpload_address());
+                holder.setImageFromInternet(R.id.iv_img, bean.getUploadResource());
+                holder.setText(R.id.tv_name, bean.getUploadName());
+                holder.setText(R.id.tv_other, bean.getUploadAddress());
                 Button btnGo=holder.getView(R.id.btn_go);
                 btnGo.setVisibility(View.VISIBLE);
                 btnGo.setOnClickListener(new View.OnClickListener() {
@@ -113,7 +113,7 @@ public class WetPointActivity extends BaseActivity {
                 mUploadInfoList.clear();
                 List<UploadInfo> uploadInfoList=RequestHelper.stringToArray(responce, UploadInfo[].class);
                 for (UploadInfo uploadInfo : uploadInfoList) {
-                    if (uploadInfo.getApproval_status()==1) {
+                    if (uploadInfo.getApprovalStatus()==1) {
                         mUploadInfoList.add(uploadInfo);
                     }
                 }

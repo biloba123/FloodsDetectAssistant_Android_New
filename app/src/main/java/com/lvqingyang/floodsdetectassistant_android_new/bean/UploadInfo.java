@@ -38,11 +38,11 @@ public class UploadInfo implements Serializable {
         this.id = id;
     }
 
-    public void setUpload_name(String upload_name) {
+    public void setUploadName(String upload_name) {
         this.upload_name = upload_name;
     }
 
-    public void setUpload_type(String upload_type) {
+    public void setUploadType(String upload_type) {
         this.upload_type = upload_type;
     }
 
@@ -51,19 +51,19 @@ public class UploadInfo implements Serializable {
     }
 
 
-    public void setUpload_address(String upload_address) {
+    public void setUploadAddress(String upload_address) {
         this.upload_address = upload_address;
     }
 
-    public void setUpload_time(long upload_time) {
+    public void setUploadTime(long upload_time) {
         this.upload_time = upload_time;
     }
 
-    public void setUpload_description(String upload_description) {
+    public void setUploadDescription(String upload_description) {
         this.upload_description = upload_description;
     }
 
-    public void setApproval_status(int approval_status) {
+    public void setApprovalStatus(int approval_status) {
         this.approval_status = approval_status;
     }
 
@@ -71,15 +71,15 @@ public class UploadInfo implements Serializable {
         return id;
     }
 
-    public String getUpload_name() {
+    public String getUploadName() {
         return upload_name;
     }
 
-    public String getUpload_type() {
+    public String getUploadType() {
         return upload_type;
     }
 
-    public String getUpload_resource() {
+    public String getUploadResource() {
         return upload_resource;
     }
 
@@ -99,19 +99,19 @@ public class UploadInfo implements Serializable {
         this.latitude = latitude;
     }
 
-    public String getUpload_address() {
+    public String getUploadAddress() {
         return upload_address;
     }
 
-    public long getUpload_time() {
+    public long getUploadTime() {
         return upload_time;
     }
 
-    public String getUpload_description() {
+    public String getUploadDescription() {
         return upload_description;
     }
 
-    public int getApproval_status() {
+    public int getApprovalStatus() {
         return approval_status;
     }
 }

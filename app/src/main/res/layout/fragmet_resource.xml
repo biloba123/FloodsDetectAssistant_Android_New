@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:custom="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar"/>
+    <com.lvqingyang.floodsdetectassistant_android_new.view.ResourceItem
+        android:id="@+id/ri_dot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:ri_icon="@mipmap/dot"
+        custom:ri_name="@string/dot_detail"
+        custom:ri_info="@string/dot_detail_info"/>
+    <com.lvqingyang.floodsdetectassistant_android_new.view.ResourceItem
+        android:id="@+id/ri_warn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:ri_icon="@mipmap/warn"
+        custom:ri_name="@string/public_warn"
+        custom:ri_info="@string/public_warn_info"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <com.lvqingyang.floodsdetectassistant_android_new.view.ResourceView
+            android:id="@+id/rv_contact"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            custom:rv_icon="@mipmap/contact"
+            custom:rv_name="@string/contact"/>
+        <com.lvqingyang.floodsdetectassistant_android_new.view.ResourceView
+            android:id="@+id/rv_emergency"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            custom:rv_icon="@mipmap/emergency"
+            custom:rv_name="@string/emergency"/>
+        <com.lvqingyang.floodsdetectassistant_android_new.view.ResourceView
+            android:id="@+id/rv_public_report"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            custom:rv_icon="@mipmap/public_report"
+            custom:rv_name="@string/public_report"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <com.lvqingyang.floodsdetectassistant_android_new.view.ResourceView
+            android:id="@+id/rv_travel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            custom:rv_icon="@mipmap/travel"
+            custom:rv_name="@string/travel"/>
+        <com.lvqingyang.floodsdetectassistant_android_new.view.ResourceView
+            android:id="@+id/rv_note"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            custom:rv_icon="@mipmap/note"
+            custom:rv_name="@string/note"/>
+        <com.lvqingyang.floodsdetectassistant_android_new.view.ResourceView
+            android:id="@+id/rv_gift"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            custom:rv_icon="@mipmap/gift"
+            custom:rv_name="@string/gift"/>
+    </LinearLayout>
+</LinearLayout>
